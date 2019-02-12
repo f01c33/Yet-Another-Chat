@@ -1,0 +1,47 @@
+<h2 class="container">Usuarios</h2>
+<table class="table table-striped table-hover table-bordered">
+<thead class="thead-dark">
+    <tr>
+        <th>Nome</th><th>Senha</th><th>Curso</th><th>Periodo</th><th>IP</th><th>Sala</th>
+    </tr>
+</thead>
+<tbody>
+    {{range $index, $usr := .Usuarios}}
+    <tr>
+        <td>{{$usr.Nome}}</td>
+        <td>{{$usr.Senha}}</td>
+        <td>{{$usr.Curso}}</td>
+        <td>{{$usr.Periodo}}</td>
+        <td>{{$usr.Addr.IP}}</td>
+        <td>{{$usr.Sala}}</td>
+    </tr>
+    {{end}}
+</tbody>
+</table>
+<h2 class="container">Discussoes</h2>
+<table class="table table-striped table-hover table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Criador</th>
+        <th>Inicio</th>
+        <th>Fim</th>
+        <th>Mensagens</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range $index, $disc := .Discussoes}}
+    <tr>
+        <td>{{$disc.ID}}</td>
+        <td>{{$disc.Nome}}</td>
+        <td>{{$disc.Descricao}}</td>
+        <td>{{$disc.Criador}}</td>
+        <td>{{$disc.Inicio}}</td>
+        <td>{{$disc.Fim}}</td>
+        <td>{{$disc.Tamanho}}</td>
+    </tr>
+{{end}}
+</tbody>
+</table>

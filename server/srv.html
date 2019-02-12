@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/static/bootstrap.min.css">
+</head>
+<body>
+<div id="data"></div>
+<script src="/static/jquery.min.js"></script>
+<script src="/static/popper.min.js"></script>
+<script src="/static/bootstrap.min.js"></script>
+<script>
+$(document).ready(
+    setInterval(
+        function () {
+            $.ajax({
+                url: '/ajax',
+                type: "post",
+                data: null,
+                dataType: 'html',
+                beforeSend: function () {
+                },
+                success: function (result) {
+                    $('#data').empty()
+                    $('#data').html(result)
+                }
+            });
+        }, 1500)
+);
+</script>
+</body>
+</html>

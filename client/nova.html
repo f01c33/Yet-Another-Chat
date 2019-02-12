@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="/static/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <style>
+    .btn{
+        text-align: right;
+    }
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Olá, {{.Nome}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+        aria-expanded="false" aria-label="Toggle navigation" style="">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Nova Discussão</a>
+                <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Sair</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li> -->
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+    </div>
+</nav>
+
+<h3 class="container">Nova Discussão</h1>
+    <form action="/nova" method="post" enctype="application/x-www-form-urlencoded" id="thegame">
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" name="nome" placeholder="Nome da sala" class="form-control">
+                <br>
+                <!-- <input type="text" name="criador" value="quem fez a sala"/><br> -->
+                <input type="text" name="descricao" placeholder="Descrição da sala" class="form-control">
+                <br>
+                <!-- <input type="date" name="fim"><br> -->
+                <input type="datetime-local" name="fim" class="form-control" placeholder="dd/mm/yyyy, hh:mm am">
+                <br>
+            </div>
+            <div class="col-md-6">
+                <textarea cols="50" rows="7" wrap="hard" name="opcoes" form="thegame" class="form-control" placeholder="Opções,separadas,por,virgula!"></textarea>
+                <br>
+            </div>
+            <!-- <div class="col-md-2"> -->
+                <!-- </div> -->
+            </div>
+            <button type="submit" class="btn btn-primary">Criar</button>
+            <!-- <input type="submit" class="btn btn-primary"> -->
+    </form>
+    <!-- <script src="/static/jquery.min.js"></script> -->
+    <!-- <script src="/static/popper.min.js"></script> -->
+    <!-- <script src="/static/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<!-- <form action="http://127.0.0.1:9999/nova" method="post" enctype="application/x-www-form-urlencoded">
+<input type="text" name="hello" value="sau sheong"/>
+<input type="text" name="post" value="456"/>
+<input type="submit"/>
+ -->

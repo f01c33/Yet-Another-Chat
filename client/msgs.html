@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-md-2">
+        <h2>Usuários</h2>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range $index, $element := .Usrs}}
+                <tr>
+                    <td>{{$element}}</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-10">
+        <h3>Mensagens</h3>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Criador</th>
+                    <th>Mensagem</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range $index, $element := .Msgs}}
+                <tr>
+                    <td>{{$element.Criador}}</td>
+                    <td>{{$element.Mensagem}}</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#voting').on("submit", function (e) {
+            e.preventDefault(); // cancel the actual submit
+            $.ajax({
+                url: '/vote',
+                type: "post",
+                'data': e.target.elements.vote.value,
+                dataType: 'html',
+                beforeSend: function () {
+
+                },
+                success: function () {
+                    // alert("done! "+TestVar);
+                }
+            });
+        });
+    });
+</script>
