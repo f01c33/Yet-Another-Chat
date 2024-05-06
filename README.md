@@ -1,6 +1,6 @@
 ## Um programa de chat para a aula de sistemas distribuidos
 Autores:
-[Cauê]("https://github.com/cauefcr")
+[Cauê]("https://github.com/f01c33")
 [Walter]("https://github.com/walterBSG")
 
 Para utilizar dos programas, entre nas respectivas pastas, pelo terminal, e rode:
